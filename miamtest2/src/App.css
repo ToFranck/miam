@@ -1,7 +1,21 @@
-.root {
-  text-align: center;
+body{
+  color: white;
+  background-color: black;
 }
 
+.root {
+  text-align: center;
+
+}
+
+.App{
+  color: aliceblue;
+}
+
+nav{
+  background-color: blue;
+
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
