@@ -1,5 +1,3 @@
-
-
 import './App.css';
 
 import db from "./firebase";
@@ -16,16 +14,22 @@ import Navbar from  './Navbar/Navbar';
 import Boucheries from './Commerces/Boucheries';
 import Boulangeries from './Commerces/Boulangeries';
 
+// import firebaseTest from './firebase'
+
+
 
 function App() {
-  const [users, setUsers] = useState([]);
+  const [user, setuser] = useState([]);
   useEffect(
     () =>  
       onSnapshot(collection(db,"users"),(snapshot) => {
-        setUsers(snapshot.docs.map(doc => doc.data()))
+        setuser(snapshot.docs.map(doc => doc.data()))
       }),
     []
   );
+ 
+  // const ref = firebaseTest.firestore().collection("USER")
+  // console.log(ref);
 
   return (
    <div className='root'>
@@ -41,16 +45,20 @@ function App() {
         </Route>
         <Route path="/profil" element={<Profile/>} />
         <Route path="/profil/:name" element={<Profile/>} />
-
-
       </Routes>
 
 
-     {/* <p>Hey 
-       {users.map(users => (
-         <p> {users.name} </p>
-        ) )}
-     </p> */}
+     <p>Hey 
+       {user.map(user => (
+          <p> {user.name} </p>
+          ) 
+          )
+        }
+     </p>
+
+
+
+
 
    </div>
   );
