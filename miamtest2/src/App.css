@@ -1,10 +1,10 @@
 body{
   color: white;
-  background-color: rgb(46, 46, 46);
+  background-color: rgb(97, 97, 97);
 }
 
 p{
-  color:red;
+  color:rgb(210, 210, 210);
 }
 
 .root {
@@ -17,7 +17,7 @@ p{
 }
 
 nav{
-  background-color: rgb(133, 133, 255);
+  background-color: rgb(185, 185, 255);
 
 }
 .App-logo {
@@ -32,7 +32,7 @@ nav{
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
