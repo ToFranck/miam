@@ -1,5 +1,5 @@
 import React from 'react';
-import miamdb from '../fakedb/miamdb.json'
+import boulangerie from '../fakedb/boulangerie.json'
 
 export default function Boulangeries() {
   
@@ -7,11 +7,11 @@ export default function Boulangeries() {
     <div>
         <h1>Nos Boulangeries</h1>
         {
-          miamdb.commerces.map(post => {
+          boulangerie.map(post => {
             return(
               <div>
               <h4>{ post.title }</h4>
-              <p>{ post.conetent }</p>
+              <p>{ post.desc }</p>
               </div>
             )
           })
