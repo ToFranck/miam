@@ -6,10 +6,17 @@ export default function Boulangeries() {
   return (
     <div>
         <h1>Nos Boulangeries</h1>
-        {miamdb.map((postDetail, index)=> {
-          return <p>{postDetail.name}</p>
-        })}
+        {
+          miamdb.commerces.map(post => {
+            return(
+              <div>
+              <h4>{ post.title }</h4>
+              <p>{ post.conetent }</p>
+              </div>
+            )
+          })
+        }
     </div>
-  )
-
+  )  
+    
 }

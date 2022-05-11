@@ -1,41 +1,22 @@
 {
-  "Category_List": {
-    "id": 1
-  },
-  "Commerce": {
-    "desc": "Miam miam",
-    "id": 1,
-    "location": "Nice",
-    "name": "BoulangeNice"
-  },
-  "Commerce_category": {
-    "id": 1,
-    "name": "Boulangerie"
-  },
-  "Fav_List": {
-    "id": 1
-  },
-  "Ingredient": {
-    "id": 1,
-    "name": "farine"
-  },
-  "Ingredient_List": {
-    "id": 1
-  },
-  "Ingredient_category": {
-    "id": 1,
-    "name": "Bio"
-  },
-  "Product": {
-    "id": 1,
-    "name": "Croisson",
-    "price": 0.5
-  },
-  "Product_Lit": {
-    "id": 1
-  },
-  "Product_category": {
-    "id": 1,
-    "name": "Croisson"
-  }
+  "commerces" : [
+    {
+      "Type": "boulangerie",
+      "component": [
+      {  
+      "title":"Boulange",
+      "content":"boulangerie",
+      "desc":"miam miam"
+      },
+      {
+      "title":"Boulange2",
+      "content":"boulangerie",
+      "desc":"miam miam"
+      }
+      ]
+    }
+  ]
+
+
 }
+
