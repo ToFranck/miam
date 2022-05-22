@@ -22,7 +22,7 @@ function App() {
   const [user, setuser] = useState([]);
   useEffect(
     () =>  
-      onSnapshot(collection(db,"users"),(snapshot) => {
+      onSnapshot(collection(db,"USER"),(snapshot) => {
         setuser(snapshot.docs.map(doc => doc.data()))
       }),
     []
