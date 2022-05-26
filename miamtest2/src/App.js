@@ -19,17 +19,15 @@ import Boulangeries from './Commerces/Boulangeries';
 
 
 function App() {
-  const [user, setuser] = useState([]);
-  useEffect(
-    () =>  
-      onSnapshot(collection(db,"USER"),(snapshot) => {
-        setuser(snapshot.docs.map(doc => doc.data()))
-      }),
-    []
-  );
+  // const [user, setuser] = useState([]);
+  // useEffect(
+  //   () =>  
+  //     onSnapshot(collection(db,"USER"),(snapshot) => {
+  //       setuser(snapshot.docs.map(doc => doc.data()))
+  //     }),
+  //   []
+  // );
  
-  // const ref = firebaseTest.firestore().collection("USER")
-  // console.log(ref);
 
   return (
    <div className='root'>
@@ -48,13 +46,13 @@ function App() {
       </Routes>
 
 
-     <p>
+     {/* <p>
        {user.map(user => (
           <p> {user.name} </p>
           ) 
           )
         }
-     </p>
+     </p> */}
 
 
 

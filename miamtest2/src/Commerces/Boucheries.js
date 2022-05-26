@@ -1,20 +1,29 @@
 import React from 'react'
-import boucherie from '../fakedb/boucherie.json'
+
+import db from '../firebase';
+import { useEffect, useState } from "react";
+import { collection, onSnapshot } from 'firebase/firestore';
+
 
 export default function Boucheries() {
+  const [boucherie, setboucherie] = useState([]);
+  useEffect(
+    () =>  
+      onSnapshot(collection(db,"COMMERCE"),(snapshot) => {
+        setboucherie(snapshot.docs.map(doc => doc.data()))
+      }),
+    []
+  );
+
   return (
     <div>
-        <h1>Nos Boucheries</h1>
-        {
-          boucherie.map(post => {
-            return(
-              <div>
-              <h4>{ post.title }</h4>
-              <p>{ post.desc }</p>
-              </div>
-            )
-          })
+      <p>
+        {boucherie.map(boucherie => (
+          <p> {boucherie.name} </p>
+          ) 
+          )
         }
-    </div>
+      </p>
+  </div>
   )
 }
