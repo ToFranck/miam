@@ -13,6 +13,10 @@ import Profile from './components/Profile';
 import Navbar from  './Navbar/Navbar';
 import Boucheries from './Commerces/Boucheries';
 import Boulangeries from './Commerces/Boulangeries';
+import PCommerce from './Commerces/PCommerce';
+import Test from './Commerces/Test';
+import Product from './Commerces/Product';
+
 
 // import firebaseTest from './firebase'
 
@@ -36,12 +40,16 @@ function App() {
 <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/commerces" element={<Commerces/>}>
+        <Route path="/commerces" element={<Commerces/>}/>
           {/* imbriquer des root pour un coté plus fast */}
-          <Route path="/commerces/boulangeries" element={<Boulangeries/>} />
-          <Route path="/commerces/boucheries" element={<Boucheries/>} />
-        </Route>
+          {/* <Route path="/commerces/boulangeries" element={<Boulangeries/>} />
+          <Route path="/commerces/boucheries" element={<Boucheries/>} /> */}
+
+        <Route path="/commerces/:id" element={<PCommerce/>} />
         <Route path="/profil" element={<Profile/>} />
+        <Route path="/test" element={<Test/>} />
+        <Route path="/product/:id" element={<Product/>} />
+
         <Route path="/profil/:name" element={<Profile/>} />
       </Routes>
 

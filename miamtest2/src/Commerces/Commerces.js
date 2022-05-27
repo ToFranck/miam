@@ -1,10 +1,12 @@
 import React from 'react'
-import {Link, Outlet} from "react-router-dom"
+
+import { Link}from "react-router-dom";
+
 
 import db from "../firebase";
 import { useEffect, useState } from "react";
 import { collection, onSnapshot } from 'firebase/firestore';
-import {BrowserRouter as Router, Route, Routes}from "react-router-dom";
+import PCommerce from './PCommerce.js';
 
 
 
@@ -18,19 +20,28 @@ export default function Commerces() {
       }),
     []
   );
+  const data = {
+    name : commerces.name,
+    id : commerces.id, 
+    type : commerces.type,
+    location : commerces.location,
 
+
+  }
  
   return (
-    <div>
+      <div>
       <h1>Nos Commerces</h1>
-      <p>
-        {/* <Route path="/pcommerces/:name" element={<commerces/>} /> */}
-        {commerces.map(commerces => (
-          <p> {commerces.name} </p>
+
+        {commerces.map(commerces => ( 
+          <li key = {commerces.id}>
+            <Link to={`/commerces/${commerces.id}`} state={[commerces.name, commerces.type, commerces.location]}>{commerces.name}</Link> 
+          </li>
+
           ) 
           )
         }
-      </p>
+      
   </div>
   )
   // return (
